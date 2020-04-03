@@ -1,0 +1,25 @@
+{
+    "window_size": [
+        600,
+        800
+    ],
+    "stay_on_top": true,
+    "font_size": 10,
+    "text_color": "#BBE1FA",
+    "color1": "#352F44",
+    "color2": "#2A2438",
+    "send_mora_hotkey": "ctrl+alt+pageup",
+    "send_line_hotkey": "ctrl+alt+pagedown",
+    "conv_dict": [
+        [
+            "個別に変換したい文字列",
+            "こべつにへんかんしたいもじれつ"
+        ]
+    ],
+    "yoon": "ゃゅょぁぃぅぇぉャュョァィゥェォ",
+    "sokuon": "っッ",
+    "kigo": "「」『』（）！？!?♥♡、。,.・／/…’”'\"-",
+    "alphabet": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZéàèùâêîôûçëïü",
+    "katakana": "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヰウヱヲンヴガギグゲゴザジズゼゾダヂヅデドバビブベボヷヸヹヺパピプペポァィゥェォヵㇰヶㇱㇲッㇳㇴㇵㇶㇷㇸㇹㇺャュョㇻㇼㇽㇾㇿヮ",
+    "highlight": "ーっッ「」『』（）！？!?♥♡、。,.・／/…’”'\"-"
+}
