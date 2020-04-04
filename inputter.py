@@ -1,8 +1,6 @@
-"""
+"""Unicode character sender for Windows.
 
-ここがWindows依存。
-
-https://stackoverflow.com/questions/11906925/python-simulate-keydown
+https://stackoverflow.com/a/11910555
 
 https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
 """
