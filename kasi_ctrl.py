@@ -22,7 +22,7 @@ class KasiCtrl(wx.TextCtrl):
 
         self.surg = surgeon.Surgeon(cfg)
         self.surg.load_ginza()
-#
+
         # 必要な箇所だけSetStyle()をするための情報
         self.needs_restyle_all = False
         self.needs_restyle_range = None

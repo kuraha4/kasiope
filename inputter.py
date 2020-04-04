@@ -1,11 +1,10 @@
 """
+
+ここがWindows依存。
+
 https://stackoverflow.com/questions/11906925/python-simulate-keydown
-このコードはUnicodeに対応していないので、KeybdInput周りを書き直す必要あり
 
 https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
-
-2020-03-26 1:55 日本語入力に成功大勝利
-
 """
 
 import time
@@ -389,80 +388,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-def switch_program():
-    SendInput(Keyboard(VK_MENU), Keyboard(VK_TAB))
-    time.sleep(0.2)
-    SendInput(Keyboard(VK_TAB, KEYEVENTF_KEYUP),
-              Keyboard(VK_MENU, KEYEVENTF_KEYUP))
-    time.sleep(0.2)
-
-
-def select_line():
-    SendInput(Keyboard(VK_SHIFT, KEYEVENTF_EXTENDEDKEY),
-              Keyboard(VK_END, KEYEVENTF_EXTENDEDKEY))
-    time.sleep(0.2)
-    SendInput(Keyboard(VK_SHIFT, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP),
-              Keyboard(VK_END, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP))
-    time.sleep(0.2)
-
-
-def copy_line():
-    SendInput(Keyboard(VK_CONTROL), Keyboard(KEY_C))
-    time.sleep(0.2)
-    SendInput(Keyboard(VK_CONTROL, KEYEVENTF_KEYUP),
-              Keyboard(KEY_C, KEYEVENTF_KEYUP))
-    time.sleep(0.2)
-
-
-def next_line():
-    SendInput(Keyboard(VK_HOME), Keyboard(VK_DOWN))
-    time.sleep(0.2)
-    SendInput(Keyboard(VK_HOME, KEYEVENTF_KEYUP),
-              Keyboard(VK_DOWN, KEYEVENTF_KEYUP))
-    time.sleep(0.2)
-
-
-def prepare_text():
-    # Open Text
-    SendInput(Keyboard(KEY_M))
-    time.sleep(0.2)
-    SendInput(Keyboard(KEY_M, KEYEVENTF_KEYUP))
-    time.sleep(0.2)
-    # Goto Area
-    SendInput(Keyboard(VK_TAB))
-    time.sleep(0.2)
-    SendInput(Keyboard(VK_TAB, KEYEVENTF_KEYUP))
-    time.sleep(0.2)
-    # Paste Message
-    SendInput(Keyboard(VK_CONTROL), Keyboard(KEY_V))
-    time.sleep(0.2)
-    SendInput(Keyboard(VK_CONTROL, KEYEVENTF_KEYUP),
-              Keyboard(KEY_V, KEYEVENTF_KEYUP))
-    time.sleep(0.2)
-    # Goto Button
-    SendInput(Keyboard(VK_TAB))
-    time.sleep(0.2)
-    SendInput(Keyboard(VK_TAB, KEYEVENTF_KEYUP))
-    time.sleep(0.2)
-
-
-def send_one_message():
-    select_line()
-    copy_line()
-    next_line()
-    switch_program()
-    prepare_text()
-    # Send Message
-    SendInput(Keyboard(VK_RETURN))
-    time.sleep(0.2)
-    SendInput(Keyboard(VK_RETURN, KEYEVENTF_KEYUP))
-    time.sleep(10)
-    switch_program()
-
-
-def send_messages(total):
-    time.sleep(10)
-    for _ in range(total):
-        send_one_message()
