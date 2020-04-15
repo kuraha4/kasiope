@@ -1,4 +1,4 @@
-"""A simple tool which helps to input Japanese lyrics into music notation software.
+"""A simple tool for inputting Japanese lyrics to music notation software.
 
 TODO:
     - 非同期でGiNZAをロードしたいがやりかたわからない、要勉強
@@ -28,7 +28,7 @@ class KasiopeFrame(wx.Frame):
         self.cfg = cfg
 
         # ウェイトを上げても脱字するときはする
-        self.send_wait = 0.017
+        self.send_wait = 0.035
 
         # self.cb_enable_hotkey = None
 
