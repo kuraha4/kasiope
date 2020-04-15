@@ -5,6 +5,7 @@ TODO:
     - Remove selected characters
     - GiNZAなくても例外処理して起動できるように
     - ウェイト調整UIをつくる
+    - マウスかキー入力があったら挿入を止めたい
 """
 
 from os import path

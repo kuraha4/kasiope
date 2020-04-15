@@ -5,7 +5,7 @@ import re
 import unicodedata
 
 import spacy
-import pykakasi
+# import pykakasi
 
 from config import Config
 
@@ -124,30 +124,30 @@ class Surgeon():
 
         return result
 
-    def kanji_to_hira_kakasi(self, jptext):
-        """"Transliterate kanji to kana, while keeping katakana."""
-        # 辞書登録された語を先にかな化する
-        for kanji, kana in self.cfg.conv_dict:
-            jptext = jptext.replace(kanji, kana)
+    # def kanji_to_hira_kakasi(self, jptext):
+    #     """"Transliterate kanji to kana, while keeping katakana."""
+    #     # 辞書登録された語を先にかな化する
+    #     for kanji, kana in self.cfg.conv_dict:
+    #         jptext = jptext.replace(kanji, kana)
 
-        # カタカナの連なりをマッチ
-        pattern = re.compile(f'[{self.cfg.katakana}]+')
-        match = pattern.findall(jptext)
+    #     # カタカナの連なりをマッチ
+    #     pattern = re.compile(f'[{self.cfg.katakana}]+')
+    #     match = pattern.findall(jptext)
 
-        # カタカナをプレースホルダーに置き換える
-        re.sub(pattern, jptext, self.kata_ph)
+    #     # カタカナをプレースホルダーに置き換える
+    #     re.sub(pattern, jptext, self.kata_ph)
 
-        # 漢字かな変換
-        kakasi = pykakasi.kakasi()
-        kakasi.setMode('J', 'H')  # Japanese to furigana
-        conv = kakasi.getConverter()
-        converted = conv.do(jptext)
+    #     # 漢字かな変換
+    #     kakasi = pykakasi.kakasi()
+    #     kakasi.setMode('J', 'H')  # Japanese to furigana
+    #     conv = kakasi.getConverter()
+    #     converted = conv.do(jptext)
 
-        # カタカナを元に戻す
-        for katakana in match:
-            converted.replace(self.kata_ph, katakana, 1)
+    #     # カタカナを元に戻す
+    #     for katakana in match:
+    #         converted.replace(self.kata_ph, katakana, 1)
 
-        return converted
+    #     return converted
 
     def kata_to_hira(self, jpstr):
         """Convert katakana to hiragana."""
